@@ -147,5 +147,8 @@
       }
     }
   },
-  "defaultProject": "MovieRatingPredictorClient"
+  "defaultProject": "MovieRatingPredictorClient",
+  "cli": {
+    "analytics": false
+  }
 }
