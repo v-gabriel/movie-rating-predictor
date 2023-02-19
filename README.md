@@ -71,6 +71,7 @@ Attributions and used tools:
 - [Undraw](https://undraw.co/)
 - [Coolors.co](https://coolors.co/)
 - [Animatiss](https://xsgames.co/animatiss/) (Licensed under FreeBSD License)
+- [Navbar icon](https://www.svgrepo.com/svg/431146/movie) (Licensed under Apache License)
 
 <br>
 
