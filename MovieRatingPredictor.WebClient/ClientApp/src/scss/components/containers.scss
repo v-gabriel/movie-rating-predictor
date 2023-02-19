@@ -67,6 +67,18 @@
   background-color: map-get(map-get($colors, "secondary"), "background");
 }
 
+.g-mat-table-sticky {
+  &-first {
+    td:first-child,
+    th:first-child {
+      position: sticky;
+      left: 0;
+      z-index: 1;
+      box-shadow: 1px 0px 0px 0px $table-border-color;
+    }
+  }
+}
+
 .g-ngx-container {
   .ngx-item {
     overflow: auto;
