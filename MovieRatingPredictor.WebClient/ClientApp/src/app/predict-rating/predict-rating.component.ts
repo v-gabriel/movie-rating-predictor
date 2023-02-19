@@ -59,7 +59,6 @@ export class PredictRatingComponent implements OnInit, OnDestroy {
   public EMH = ErrorMessageHelper;
 
   public isReset = false;
-  public manualRefresh = true;
 
   constructor(
     public loadingService: LoadingService,
