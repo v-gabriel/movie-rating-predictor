@@ -1,0 +1,22 @@
+<body class="mat-app-background">
+  <app-nav-menu></app-nav-menu>
+  <div class="container-xxl pb-5">
+    <div class="row content p-sm-3 p-md-5">
+      <div class="col">
+        <router-outlet></router-outlet>
+      </div>
+      <!-- <div class="col-sm-2 sidenav text-end">
+        <div>
+          <a [routerLink]="[RoutesKey.PredictRating]">Predict</a>
+        </div>
+        <div>
+          <a [routerLink]="[RoutesKey.Statistics]">Statistics</a>
+        </div>
+      </div> -->
+    </div>
+
+    <footer class="fixed-bottom">
+      <app-loader></app-loader>
+    </footer>
+  </div>
+</body>

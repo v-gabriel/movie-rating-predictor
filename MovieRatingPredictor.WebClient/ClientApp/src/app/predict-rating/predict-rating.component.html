@@ -1,0 +1,102 @@
+<form [formGroup]="fg!">
+  <div class="pt-2 pb-2">
+    <h2>Predict rating</h2>
+    <p>
+      <span class="g-color-primary">Note: </span> Make sure to pick
+      <b>realistic</b> values.
+    </p>
+  </div>
+  <div class="row">
+    <div class="col-sm p-3">
+      <label style="padding-bottom: 10px" for="categoriesInput"
+        >Categories</label
+      >
+      <mat-chip-listbox
+        formControlName="categories"
+        multiple
+        selectable
+        #categoriesInput
+        aria-label="Categories selection"
+      >
+        <mat-chip-option color="accent" *ngFor="let category of categories">{{
+          category
+        }}</mat-chip-option>
+      </mat-chip-listbox>
+    </div>
+    <div class="col-md">
+      <div class="row">
+        <mat-form-field #yearInput class="col-lg p-3">
+          <mat-label>Released year</mat-label>
+          <input
+            matInput
+            formControlName="releasedYear"
+            number
+            placeholder="Enter released year..."
+          />
+          <mat-error>{{
+            EMH.getErrorMessage(fg!.controls.releasedYear, "Released year")
+          }}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field #runtimeInput class="col-lg p-3">
+          <mat-label>Runtime</mat-label>
+          <input
+            matInput
+            formControlName="runtime"
+            number
+            placeholder="Enter minutes..."
+          />
+          <span matTextSuffix>&nbsp;min</span>
+          <mat-error>{{
+            EMH.getErrorMessage(fg!.controls.runtime, "Runtime")
+          }}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field #grossInput class="col-lg p-3">
+          <mat-label>Gross</mat-label>
+          <input
+            number
+            matInput
+            formControlName="gross"
+            placeholder="Enter amount..."
+          />
+          <span matTextPrefix>$&nbsp;</span>
+          <mat-hint>Gross earnings in U.S. dollars</mat-hint>
+          <mat-error>{{
+            EMH.getErrorMessage(fg!.controls.gross, "Gross")
+          }}</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+</form>
+<div class="container-fluid pt-3">
+  <div class="col-sm d-flex justify-content-end">
+    <div class="d-flex justify-content-between">
+      <button mat-button (click)="reset()" class="m-2">Reset</button>
+      <button
+        (click)="submit()"
+        [disabled]="loadingService.isLoading(resultJobId!)"
+        mat-flat-button
+        class="shadow-drop-center m-2"
+      >
+        Submit
+      </button>
+    </div>
+  </div>
+</div>
+<div class="container g-mat-card-container pt-4">
+  <mat-card>
+    <mat-card-content
+      #resultElement
+      [ngClass]="[
+        !loadingService.isLoading(resultJobId!) && predictionResult
+          ? 'g-result-container-active'
+          : 'g-result-container-inactive'
+      ]"
+    >
+      {{ predictionResult ? (predictionResult | number : "1.2-2") : "X.XX" }}
+    </mat-card-content>
+  </mat-card>
+</div>

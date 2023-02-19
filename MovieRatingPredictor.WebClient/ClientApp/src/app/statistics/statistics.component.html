@@ -1,0 +1,181 @@
+<div *ngIf="loadingService.isLoading(resultJobId!); else content">
+  <div class="g-image-container">
+    <img src="../../assets/svg/loading-statistics.svg" />
+  </div>
+  <div
+    class="mt-2 mb-4 d-flex center text-center flex-column align-items-center"
+  >
+    <h3 class="col-7">Loading... please wait</h3>
+  </div>
+</div>
+<ng-template #content>
+  <div *ngIf="isDataReady(); else contentError">
+    <div class="mt-2 mb-4">
+      <h2>Statistics</h2>
+    </div>
+
+    <div class="mt-5">
+      <div class="mt-2">
+        <h3 class="g-p-highlight-start">User data</h3>
+      </div>
+
+      <h4 class="mt-5 mb-2">All</h4>
+      <div class="g-mat-table-container">
+        <table
+          mat-table
+          [dataSource]="data!"
+          paginator=""
+          matSort
+          #dataSort="matSort"
+          matSortActive="date"
+          matSortDirection="desc"
+        >
+          <ng-container *ngFor="let column of columns" [matColumnDef]="column">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              {{ column }}
+            </th>
+            <td mat-cell *matCellDef="let dataItem">{{ dataItem[column] }}</td>
+          </ng-container>
+          <tr *matNoDataRow>
+            <td>No data...</td>
+          </tr>
+          <tr mat-header-row *matHeaderRowDef="columns"></tr>
+          <tr mat-row *matRowDef="let row; columns: columns"></tr>
+        </table>
+        <mat-paginator
+          #dataPaginator="matPaginator"
+          [length]="data.filteredData.length"
+          [pageSize]="10"
+          [pageSizeOptions]="[10, 20, 50, 100]"
+          [showFirstLastButtons]="true"
+        >
+        </mat-paginator>
+      </div>
+
+      <div class="g-ngx-container">
+        <div class="ngx-item mt-5 d-flex">
+          <ngx-charts-linear-gauge
+            [view]="ngxSizeXS"
+            [scheme]="ngxDataScheme"
+            [value]="statistics?.imdbRatingStatistics?.min!"
+            [previousValue]="0"
+            [min]="0"
+            [max]="10"
+            [units]="'min'"
+          >
+          </ngx-charts-linear-gauge>
+        </div>
+      </div>
+      <div class="g-mat-table-container">
+        <table
+          mat-table
+          [dataSource]="minData!"
+          matSort
+          #minDataSort="matSort"
+          matSortActive="date"
+          matSortDirection="desc"
+        >
+          <ng-container *ngFor="let column of columns" [matColumnDef]="column">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              {{ column }}
+            </th>
+            <td mat-cell *matCellDef="let dataItem">{{ dataItem[column] }}</td>
+          </ng-container>
+          <tr *matNoDataRow>
+            <td>No data...</td>
+          </tr>
+          <tr mat-header-row *matHeaderRowDef="columns"></tr>
+          <tr mat-row *matRowDef="let row; columns: columns"></tr>
+        </table>
+        <mat-paginator
+          #minDataPaginator="matPaginator"
+          [length]="data?.data?.length"
+          [pageSize]="10"
+          [pageSizeOptions]="[10, 20, 50, 100]"
+          [showFirstLastButtons]="true"
+        >
+        </mat-paginator>
+      </div>
+
+      <div class="g-ngx-container">
+        <div class="ngx-item mt-5 d-flex">
+          <ngx-charts-linear-gauge
+            [view]="ngxSizeXS"
+            [scheme]="ngxDataScheme"
+            [value]="statistics?.imdbRatingStatistics?.max!"
+            [previousValue]="10"
+            [min]="0"
+            [max]="10"
+            [units]="'max'"
+          >
+            >
+          </ngx-charts-linear-gauge>
+        </div>
+      </div>
+      <div class="g-mat-table-container">
+        <table
+          mat-table
+          [dataSource]="maxData!"
+          matSort
+          #maxDataSort="matSort"
+          matSortActive="date"
+          matSortDirection="desc"
+        >
+          <ng-container *ngFor="let column of columns" [matColumnDef]="column">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              {{ column }}
+            </th>
+            <td mat-cell *matCellDef="let dataItem">{{ dataItem[column] }}</td>
+          </ng-container>
+          <tr *matNoDataRow>
+            <td>No data...</td>
+          </tr>
+          <tr mat-header-row *matHeaderRowDef="columns"></tr>
+          <tr mat-row *matRowDef="let row; columns: columns"></tr>
+        </table>
+        <mat-paginator
+          #maxDataPaginator="matPaginator"
+          [length]="data?.data?.length"
+          [pageSize]="10"
+          [pageSizeOptions]="[10, 20, 50, 100]"
+          [showFirstLastButtons]="true"
+        >
+        </mat-paginator>
+      </div>
+    </div>
+
+    <div class="mt-5">
+      <div class="mt-2">
+        <h3 class="g-p-highlight-start">Specific data</h3>
+      </div>
+      <div class="g-ngx-container">
+        <div class="ngx-item mt-5">
+          <ngx-charts-pie-chart
+            [scheme]="ngxDataScheme"
+            [results]="yearStats"
+            [legend]="false"
+            [labels]="true"
+            [doughnut]="false"
+          >
+          </ngx-charts-pie-chart>
+        </div>
+        <div class="ngx-item mt-5">
+          <ngx-charts-pie-grid
+            [view]="ngxSizeL"
+            [scheme]="ngxDataScheme"
+            [results]="categoryStats"
+          >
+          </ngx-charts-pie-grid>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+<ng-template #contentError>
+  <div class="g-image-container">
+    <img src="../../assets/svg/error.svg" />
+  </div>
+  <div class="mt-2 mb-4 d-flex center text-center flex-column">
+    <h3>Ooops... looks like something went wrong</h3>
+  </div>
+</ng-template>

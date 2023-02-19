@@ -1,0 +1,3 @@
+.g-navbar-bg {
+  background-color: map-get(map-get($colors, 'primary'), 'background') !important;
+}

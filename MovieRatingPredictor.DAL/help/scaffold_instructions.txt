@@ -1,0 +1,19 @@
+// CLI:
+dotnet ef dbcontext scaffold "{conn_string}" Microsoft.EntityFrameworkCore.SqlServer -o Models --context-dir Context --force"
+
+// Rider UI provider:
+Microsoft.EntityFrameworkCore.SqlServer
+
+//----------------------------------------------------------------------------------------------------------------------
+// # LOCAL
+//----------------------------------------------------------------------------------------------------------------------
+
+Server=localhost;User=sa;Password=P@$$word!;Database=master;Trusted_Connection=False;Persist Security Info=False;Encrypt=False;TrustServerCertificate=true;
+
+Additional arguments = "--force"
+
+//----------------------------------------------------------------------------------------------------------------------
+// # Cloud connection
+//----------------------------------------------------------------------------------------------------------------------
+
+Server=tcp:imdb-rating-predictor.database.windows.net,1433;Initial Catalog=imdb-rating-predictor-db;Persist Security Info=False;User ID=serverAdmin;Password=Pa$$word!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;

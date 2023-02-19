@@ -1,0 +1,22 @@
+.g-p-highlight-start {
+  border-left: 1px solid map-get(map-get($colors, "primary"), "color");
+  padding-left: 10px;
+}
+
+.g-p-highlight-both {
+  border-left: 1px solid map-get(map-get($colors, "primary"), "color");
+  border-right: 1px solid map-get(map-get($colors, "primary"), "color");
+
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.g-p-highlight-end {
+  border-left: 1px solid map-get(map-get($colors, "primary"), "color");
+  padding-left: 10px;
+}
+
+.g-subtitle-h1 {
+  font-size: 25px !important;
+  color: map-get(map-get($colors, "primary"), "color");
+}

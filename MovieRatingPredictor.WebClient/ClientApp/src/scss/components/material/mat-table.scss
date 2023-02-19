@@ -1,0 +1,23 @@
+.mat-mdc-table {
+  background-color: map-get(
+    map-get($colors, "secondary"),
+    "background"
+  ) !important;
+}
+
+.mat-mdc-paginator {
+  background-color: map-get(
+    map-get($colors, "secondary"),
+    "background"
+  ) !important;
+}
+
+.mat-sort-header-arrow {
+  color: map-get(map-get($colors, "primary"), "color") !important;
+}
+
+.mat-sort-header {
+  text-transform: capitalize;
+  font-weight: bold;
+  color: map-get(map-get($colors, "primary"), "color") !important;
+}

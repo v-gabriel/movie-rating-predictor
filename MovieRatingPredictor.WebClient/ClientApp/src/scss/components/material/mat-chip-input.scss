@@ -1,0 +1,10 @@
+.mat-mdc-standard-chip {
+  background-color: map-get(
+    map-get($colors, "secondary"),
+    "background"
+  ) !important;
+}
+
+.mat-mdc-chip-selected {
+  background-color: map-get(map-get($colors, "ternary"), "color") !important;
+}

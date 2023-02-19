@@ -1,0 +1,6 @@
+.mat-mdc-select-panel {
+  background-color: map-get(
+    map-get($colors, "secondary"),
+    "background"
+  ) !important;
+}

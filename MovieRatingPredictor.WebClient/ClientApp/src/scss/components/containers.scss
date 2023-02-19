@@ -1,0 +1,86 @@
+.g-image-container {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    max-width: 170px;
+  }
+
+  &-icon {
+    img {
+      height: inherit;
+      width: 38px;
+    }
+  }
+
+  &-link {
+    img {
+      width: 30px;
+    }
+  }
+}
+
+.g-spinner-container {
+  mat-spinner {
+    width: 50px !important;
+    height: 50px !important;
+    display: block;
+    left: 48%;
+    right: 0%;
+  }
+}
+
+.g-result-container {
+  &-inactive {
+    color: $contrast-color;
+    border: 1px dashed $contrast-color;
+  }
+
+  &-active {
+    color: map-get(map-get($colors, "primary"), "color");
+    border: 1px solid map-get(map-get($colors, "primary"), "color");
+  }
+}
+
+.g-mat-card-container {
+  * {
+    box-shadow: none !important;
+  }
+
+  mat-card {
+    background: transparent !important;
+
+    mat-card-content {
+      align-self: center !important;
+      font-size: 25px;
+    }
+  }
+}
+
+.g-mat-table-container {
+  overflow: auto;
+  background-color: map-get(map-get($colors, "secondary"), "background");
+}
+
+.g-ngx-container {
+  .ngx-item {
+    overflow: auto;
+    max-width: 100% !important;
+  }
+  * {
+    text {
+      fill: map-get(map-get($colors, "text"), "color") !important;
+      stroke: map-get(map-get($colors, "text"), "color") !important;
+    }
+  }
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}

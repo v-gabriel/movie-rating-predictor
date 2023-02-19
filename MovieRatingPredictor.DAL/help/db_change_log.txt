@@ -1,0 +1,24 @@
+CREATE TABLE [dbo].[UserStatistics]
+(
+    [Id] INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+    [ReleasedYear] INT NOT NULL,
+    [RuntimeMin] INT NOT NULL,
+    [Gross] INT NOT NULL DEFAULT 0,
+    [IsHorror] BIT NOT NULL DEFAULT 0,
+    [IsCrime] BIT NOT NULL DEFAULT 0,
+    [IsComedy] BIT NOT NULL DEFAULT 0,
+    [IsRomance] BIT NOT NULL DEFAULT 0,
+    [IsMusic] BIT NOT NULL DEFAULT 0,
+    [IsAdventure] BIT NOT NULL DEFAULT 0,
+    [IsMystery] BIT NOT NULL DEFAULT 0,
+    [IsWar]  BIT NOT NULL DEFAULT 0,
+    [IsWestern]  BIT NOT NULL DEFAULT 0,
+    [IsBiography]  BIT NOT NULL DEFAULT 0,
+    [IsHistory]  BIT NOT NULL DEFAULT 0,
+    [IsThriller]  BIT NOT NULL DEFAULT 0,
+    [IsSciFi]  BIT NOT NULL DEFAULT 0,
+    [IsAction]  BIT NOT NULL DEFAULT 0,
+    [IsDrama]  BIT NOT NULL DEFAULT 0,
+    [IMDB_Rating] DECIMAL(2,1) NOT NULL,
+);
+

@@ -1,0 +1,15 @@
+.g-color-warn {
+  color: map-get(map-get($colors, 'warn'), 'color');
+}
+
+.g-color-secondary {
+  color: map-get(map-get($colors, 'secondary'), 'color');
+}
+
+.g-color-ternary {
+  color: map-get(map-get($colors, 'ternary'), 'color');
+}
+
+.g-color-primary {
+  color: map-get(map-get($colors, 'primary'), 'color');
+}

@@ -1,0 +1,16 @@
+.mat-mdc-text-field-wrapper {
+  background-color: transparent;
+
+  * {
+    border-radius: 0px !important;
+  }
+}
+
+.mdc-text-field {
+  background-color: map-get(
+    map-get($colors, "secondary"),
+    "background"
+  ) !important;
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+}

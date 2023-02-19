@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieRatingPredictor.WebClient", "MovieRatingPredictor.WebClient\MovieRatingPredictor.WebClient.csproj", "{A3C0EC94-A1AD-4212-9421-1DF287E975CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieRatingPredictor.Service", "MovieRatingPredictor.Service\MovieRatingPredictor.Service.csproj", "{933D2750-E05A-446A-B72C-62F54BE30DED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieRatingPredictor.Model", "MovieRatingPredictor.Model\MovieRatingPredictor.Model.csproj", "{15BBA36D-C29B-4290-B74F-AB648C321C72}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieRatingPredictor.DAL", "MovieRatingPredictor.DAL\MovieRatingPredictor.DAL.csproj", "{9DB960B3-B657-4CF8-AD14-7FFD97262138}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A3C0EC94-A1AD-4212-9421-1DF287E975CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3C0EC94-A1AD-4212-9421-1DF287E975CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3C0EC94-A1AD-4212-9421-1DF287E975CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3C0EC94-A1AD-4212-9421-1DF287E975CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{933D2750-E05A-446A-B72C-62F54BE30DED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{933D2750-E05A-446A-B72C-62F54BE30DED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{933D2750-E05A-446A-B72C-62F54BE30DED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{933D2750-E05A-446A-B72C-62F54BE30DED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15BBA36D-C29B-4290-B74F-AB648C321C72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15BBA36D-C29B-4290-B74F-AB648C321C72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15BBA36D-C29B-4290-B74F-AB648C321C72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15BBA36D-C29B-4290-B74F-AB648C321C72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DB960B3-B657-4CF8-AD14-7FFD97262138}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DB960B3-B657-4CF8-AD14-7FFD97262138}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DB960B3-B657-4CF8-AD14-7FFD97262138}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DB960B3-B657-4CF8-AD14-7FFD97262138}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,17 @@
+export enum CategoryEnum {
+  Horror = 'Horror',
+  Crime = 'Crime',
+  Comedy = 'Comedy',
+  Romance = 'Romance',
+  Music = 'Music',
+  Adventure = 'Adventure',
+  Mystery = 'Mystery',
+  War = 'War',
+  Western = 'Western',
+  Biography = 'Biography',
+  History = 'History',
+  Thriller = 'Thriller',
+  SciFi = 'Sci-fi',
+  Action = 'Action',
+  Drama = 'Drama',
+}

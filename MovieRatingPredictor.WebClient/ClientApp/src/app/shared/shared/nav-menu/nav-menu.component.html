@@ -1,0 +1,69 @@
+<header class="g-navbar-bg">
+  <nav
+    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark mb-3 d-flex flex-column"
+  >
+    <div class="container-xxl">
+      <a class="navbar-brand" [routerLink]="['/']">
+        <div class="g-image-container-icon">
+          <img src="../../assets/svg/movie-icon.svg" />
+        </div>
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-label="Toggle navigation"
+        [attr.aria-expanded]="isExpanded"
+        (click)="toggle()"
+      >
+        <span class="navbar-toggler-icon">
+          <span class="material-symbols-outlined"> menu </span>
+        </span>
+      </button>
+      <div
+        class="navbar-collapse collapse d-sm-inline-flex justify-content-between"
+        [ngClass]="{ show: isExpanded }"
+      >
+        <ul class="navbar-nav flex-grow">
+          <li
+            class="nav-item"
+            [routerLinkActive]="['link-active']"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <a class="nav-link" [routerLink]="['/']">Home</a>
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link" [routerLink]="[RoutesKey.PredictRating]"
+              >Predict</a
+            >
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link" [routerLink]="[RoutesKey.Statistics]"
+              >Statistics</a
+            >
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a
+              class="nav-link"
+              target="_blank"
+              [routerLink]="[RoutesKey.Swagger]"
+              >Swagger</a
+            >
+          </li>
+        </ul>
+        <ul class="navbar-nav flex-grow">
+          <li
+            class="nav-item"
+            [routerLinkActive]="['link-active']"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <a class="nav-link g-image-container-link" href=""
+              ><img src="../../assets/svg/github.svg"
+            /></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

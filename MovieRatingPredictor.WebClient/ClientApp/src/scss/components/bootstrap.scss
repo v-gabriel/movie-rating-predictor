@@ -1,0 +1,18 @@
+.navbar-toggler {
+  border: none !important;
+  display: contents;
+}
+
+.navbar-toggler-icon {
+  background-image: none;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.link-active {
+  * {
+    color: white !important;
+  }
+}

@@ -1,0 +1,18 @@
+.mat-app-background {
+  background-color: map-get(
+    map-get($colors, "primary"),
+    "background"
+  ) !important;
+}
+
+mat-hint {
+  color: $contrast-color;
+}
+
+// .material-symbols-outlined {
+//   font-size: 29px !important;
+// }
+
+.mat-mdc-outlined-button {
+  //border-color: map-get(map-get($colors, 'primary'), 'color') !important;
+}

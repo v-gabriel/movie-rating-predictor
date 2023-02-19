@@ -1,0 +1,21 @@
+<div class="row content">
+  <div class="col-md-8">
+    <div class="">
+      <h1>Movie rating predictor</h1>
+      <p class="g-text-primary g-subtitle-h1">Predict movie ratings<br /></p>
+      <p class="g-p-highlight-start">
+        Imdb rating predictor based on <b>Azure ML</b>.
+      </p>
+    </div>
+    <button
+      class="shadow-drop-center mt-3 mb-6"
+      [routerLink]="[RoutesKey.PredictRating]"
+      mat-flat-button
+    >
+      Predict
+    </button>
+  </div>
+  <div class="col-md-4 g-image-container align-items-end">
+    <img height="inherit" width="inherit" src="../../assets/svg/predict.svg" />
+  </div>
+</div>

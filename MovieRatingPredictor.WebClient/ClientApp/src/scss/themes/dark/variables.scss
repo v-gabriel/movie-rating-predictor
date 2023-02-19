@@ -1,0 +1,24 @@
+$colors: (
+  "text": (
+    "color": #ffffff,
+  ),
+  "primary": (
+    "color": #40c4ff,
+    "background": #0e0f19,
+    "color-disabled": #327fa0,
+  ),
+  "secondary": (
+    "color": #448aff,
+    "background": #252525,
+  ),
+  "ternary": (
+    "color": #3d6f94,
+  ),
+  "warn": (
+    "color": #e71d36,
+  ),
+);
+
+$contrast-color: rgba(255, 255, 255, 0.6);
+
+$secondary-bg: #161727;
