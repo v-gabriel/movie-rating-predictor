@@ -249,7 +249,6 @@ export class StatisticsComponent implements OnInit {
 
     let maxData = this.statistics?.maxRatedUserStatistic ?? [];
     this.maxData.data = maxData;
-
     //#endregion
   }
 }

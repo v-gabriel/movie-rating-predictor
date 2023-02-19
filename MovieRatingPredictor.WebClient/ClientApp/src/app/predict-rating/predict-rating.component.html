@@ -96,7 +96,9 @@
           : 'g-result-container-inactive'
       ]"
     >
-      {{ predictionResult ? (predictionResult | number : "1.2-2") : "X.XX" }}
+      <span *ngIf="manualRefresh">{{
+        predictionResult ? (predictionResult | number : "1.2-2") : "X.XX"
+      }}</span>
     </mat-card-content>
   </mat-card>
 </div>

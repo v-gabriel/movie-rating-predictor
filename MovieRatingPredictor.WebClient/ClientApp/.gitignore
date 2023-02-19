@@ -40,4 +40,4 @@ testem.log
 Thumbs.db
 
 # Custom
-./angular/cache/
+.angular/cache/

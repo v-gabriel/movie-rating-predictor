@@ -18,26 +18,15 @@ export class NumberInputDirective {
 
     ref.nativeElement.addEventListener('input', (event: any) => {
       if (event.data && typeof event.data === 'string') {
-        //var value: string | null = event.data as string;
-        //console.log('value', value);
-        //console.log('elVa', ref.nativeElement.value);
         var value = ref.nativeElement.value;
-        //var prevValue = control.control?.value as string;
 
         if (value.match(NUM_REG_EXP)) {
-          // if (prevValue.match(NUM_REG_EXP)) {
-          //   value = prevValue + value;
-          // }
           if (value[0] === '0') {
             value = null;
           }
           control.control?.setValue(value);
         } else {
-          // if (prevValue.match(NUM_REG_EXP)) {
-          //   control.control?.setValue(prevValue);
-          // } else {
           control.control?.setValue(null);
-          //}
         }
       }
     });

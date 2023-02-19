@@ -1,20 +1,13 @@
 import {
+  ChangeDetectorRef,
   Component,
   ElementRef,
   OnDestroy,
   OnInit,
   ViewChild,
 } from '@angular/core';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
-import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
-import { MatChipInputEvent } from '@angular/material/chips';
-import { first, map, Observable, startWith } from 'rxjs';
-import { COMMA, ENTER } from '@angular/cdk/keycodes';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { first } from 'rxjs';
 import { CategoryEnum } from '../core/models/CategoryEnum';
 import { CertificateEnum } from '../core/models/CertificateEnum';
 import { LoadingService } from '../core/services/loading.service';
@@ -66,13 +59,15 @@ export class PredictRatingComponent implements OnInit, OnDestroy {
   public EMH = ErrorMessageHelper;
 
   public isReset = false;
+  public manualRefresh = true;
 
   constructor(
     public loadingService: LoadingService,
     private _formBuilder: FormBuilder,
     private _stateService: StateService,
     private _busService: EventBusService,
-    private _predictionService: PredictionService
+    private _predictionService: PredictionService,
+    private _cdr: ChangeDetectorRef
   ) {
     this.initFormGroup();
     this.getState();
@@ -184,6 +179,10 @@ export class PredictRatingComponent implements OnInit, OnDestroy {
       .subscribe({
         next: (result: IMLScoreResult) => {
           this.predictionResult = result.imdbRating;
+
+          this._cdr.detectChanges();
+          this.saveState();
+
           this._busService.emit({
             key: this.constructor.name,
             value: new BusEvent(BusEventType.REFRESH, null),
@@ -199,6 +198,7 @@ export class PredictRatingComponent implements OnInit, OnDestroy {
   }
 
   flashResultAnimation() {
+    this._cdr.detectChanges();
     if (this.predictionResult) {
       this._resultElementRef!.nativeElement.classList.remove(
         'g-animate-flash-warn'
